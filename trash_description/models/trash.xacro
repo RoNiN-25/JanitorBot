@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<robot name="trash" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="cube">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="${(0.01*0.2**2)/6}" ixy="0.0" ixz="0" iyy="${(0.01*0.2**2)/6}" iyz="0" izz="${(0.01*0.2**2)/6}"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.2 0.2 0.4"/>
+      </geometry>
+      <material name="silver_default"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.2 0.2 0.4"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="cube">
+    <mu1>100000</mu1>
+    <mu2>100000</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+</robot>

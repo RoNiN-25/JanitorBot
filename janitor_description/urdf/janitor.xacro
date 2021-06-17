@@ -1,0 +1,328 @@
+<?xml version="1.0" ?>
+<robot name="janitor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find janitor_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find janitor_description)/urdf/janitor.trans" />
+<xacro:include filename="$(find janitor_description)/urdf/janitor.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.023600320364455807 0.0006366870696410255 0.019438674321253818"/>
+    <mass value="329.3286188584961"/>
+    <inertia ixx="47.812298" ixy="-0.0" ixz="-1.107359" iyy="52.557928" iyz="-0.0" izz="93.67127"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.265823148579372e-07 -0.07500031293035925 6.503344876507278e-08"/>
+    <mass value="29.747053613448767"/>
+    <inertia ixx="0.685289" ixy="0.0" ixz="-0.0" iyy="1.259026" iyz="0.0" izz="0.685289"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.457439 0.609363 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/rear_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.457439 0.609363 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/rear_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.2658231491344836e-07 -0.07500031293035903 6.503344879976725e-08"/>
+    <mass value="29.74705361344877"/>
+    <inertia ixx="0.685289" ixy="-0.0" ixz="-0.0" iyy="1.259026" iyz="0.0" izz="0.685289"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.157561 0.609363 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/front_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.157561 0.609363 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/front_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_leftt_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.265823148579372e-07 0.074999687069641 6.50334488483395e-08"/>
+    <mass value="29.74705361344877"/>
+    <inertia ixx="0.685289" ixy="0.0" ixz="0.0" iyy="1.259026" iyz="0.0" izz="0.685289"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.157561 -0.610637 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/front_leftt_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.157561 -0.610637 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/front_leftt_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_left_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.265823148579372e-07 0.074999687069641 6.503344888997287e-08"/>
+    <mass value="29.747053613448767"/>
+    <inertia ixx="0.685289" ixy="0.0" ixz="0.0" iyy="1.259026" iyz="0.0" izz="0.685289"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.457439 -0.610637 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/rear_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.457439 -0.610637 0.048402"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/rear_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rgbd_camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004767808175927257 -3.1293035905100887e-07 0.05000038601495657"/>
+    <mass value="6.3547497618390105"/>
+    <inertia ixx="0.246993" ixy="-0.0" ixz="0.0" iyy="0.009422" iyz="-0.0" izz="0.245912"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.765061 -0.000637 0.048864"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/rgbd_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.765061 -0.000637 0.048864"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/rgbd_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.2658231491344836e-07 -3.129303590334448e-07 0.04870065350554012"/>
+    <mass value="5.051088077638525"/>
+    <inertia ixx="0.023293" ixy="0.0" ixz="-0.0" iyy="0.023293" iyz="0.0" izz="0.038507"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.435061 -0.000637 -0.203136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.435061 -0.000637 -0.203136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="vertical_body_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.220270275826719e-07 -3.129303590596825e-07 0.6797932577648836"/>
+    <mass value="14.513519999999996"/>
+    <inertia ixx="2.249865" ixy="0.0" ixz="0.0" iyy="2.249865" iyz="-0.0" izz="0.026865"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.108697 -0.000637 -0.195136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/vertical_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.108697 -0.000637 -0.195136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/vertical_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="horizontal_body_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.5984419722507355 -3.129303590811497e-07 0.04970922857426663"/>
+    <mass value="3.0"/>
+    <inertia ixx="0.007712" ixy="-0.0" ixz="0.000479" iyy="1.407278" iyz="0.0" izz="1.410619"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.158697 -0.000637 -0.401136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/horizontal_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.158697 -0.000637 -0.401136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/horizontal_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="vertical_pickup_body_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.04787954786711146 -0.05575573742860998 -0.512801661589241"/>
+    <mass value="3.3011829023328936"/>
+    <inertia ixx="0.183863" ixy="7e-05" ixz="0.000668" iyy="0.158497" iyz="-0.031306" izz="0.047022"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.496303 -0.000637 -0.476136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/vertical_pickup_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.496303 -0.000637 -0.476136"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/vertical_pickup_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.2202702276707953e-07 -0.015000312930359055 -0.10632446634511768"/>
+    <mass value="1.1878142875593714"/>
+    <inertia ixx="0.004456" ixy="0.0" ixz="0.0" iyy="0.009497" iyz="0.0" izz="0.005219"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.448803 -0.180637 0.103864"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.448803 -0.180637 0.103864"/>
+    <geometry>
+      <mesh filename="package://janitor_description/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="rear_right_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.457439 -0.609363 -0.048402"/>
+  <parent link="base_link"/>
+  <child link="rear_right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="front_right_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.157561 -0.609363 -0.048402"/>
+  <parent link="base_link"/>
+  <child link="front_right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="front_left_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.157561 0.610637 -0.048402"/>
+  <parent link="base_link"/>
+  <child link="front_leftt_wheel_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="rear_left_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.457439 0.610637 -0.048402"/>
+  <parent link="base_link"/>
+  <child link="rear_left_wheel_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="rigid_camera_base" type="fixed">
+  <origin rpy="0 0 0" xyz="0.765061 0.000637 -0.048864"/>
+  <parent link="base_link"/>
+  <child link="rgbd_camera_1"/>
+</joint>
+
+<joint name="rigid_lidar_base" type="fixed">
+  <origin rpy="0 0 0" xyz="0.435061 0.000637 0.24"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="twist_joint" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.108697 0.000637 0.195136"/>
+  <parent link="base_link"/>
+  <child link="vertical_body_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="100" lower="-3.141593" upper="3.141593" velocity="0.4"/>
+</joint>
+
+<joint name="prismatic_vertical" type="prismatic">
+  <origin rpy="0 0 0" xyz="-0.05 0.0 0.206"/>
+  <parent link="vertical_body_1"/>
+  <child link="horizontal_body_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="15000" lower="0.0" upper="0.975" velocity="5"/>
+</joint>
+
+<joint name="prismatic_horizontal" type="prismatic">
+  <origin rpy="0 0 0" xyz="1.655 0.0 0.075"/>
+  <parent link="horizontal_body_1"/>
+  <child link="vertical_pickup_body_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit effort="100" lower="0.0" upper="1.4" velocity="100"/>
+</joint>
+
+<joint name="prismatic_gripper" type="prismatic">
+  <origin rpy="0 0 0" xyz="-0.0475 0.18 -0.58"/>
+  <parent link="vertical_pickup_body_1"/>
+  <child link="gripper_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+  <limit effort="100" lower="-0.225" upper="0.0" velocity="100"/>
+</joint>
+
+<joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    <parent link="rgbd_camera_1"/>
+    <child link="camera_rgb_frame"/>
+  </joint>
+
+  <link name="camera_rgb_frame">
+  </link>
+
+  <joint name="camera_depth_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    <parent link="rgbd_camera_1"/>
+    <child link="camera_depth_frame"/>
+  </joint>
+
+    <link name="camera_depth_frame">
+  </link>
+
+</robot>

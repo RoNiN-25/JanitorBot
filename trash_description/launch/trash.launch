@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load the block -->
+  <param command="$(find xacro)/xacro $(find trash_description)/models/trash.xacro" name="trash_description"/>
+
+<!-- Spawn the block -->
+  <node args="-x 1.1 -y 2.5 -z 0.21 -param trash_description -urdf -model trash" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+
+</launch>
